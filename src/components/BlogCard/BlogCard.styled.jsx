@@ -63,7 +63,7 @@ export const CardFooter = styled.div`
 
 export const UserBox = styled.div`
   display: flex;
-  gap: ${props => props.theme.spacing(2)}; ;
+  gap: ${props => props.theme.spacing(2)};
 `;
 
 export const Avatar = styled.img`
@@ -80,6 +80,6 @@ export const UserName = styled.h3`
   margin-bottom: ${props => props.theme.spacing(1)};
 `;
 
-export const Date = styled.small`
+export const DateEl = styled.small`
   color: ${props => props.theme.colors.gray};
 `;
