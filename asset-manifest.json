@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Blend-03-04/static/css/main.17654e45.css",
+    "main.js": "/Blend-03-04/static/js/main.f471d2b9.js",
+    "index.html": "/Blend-03-04/index.html",
+    "main.17654e45.css.map": "/Blend-03-04/static/css/main.17654e45.css.map",
+    "main.f471d2b9.js.map": "/Blend-03-04/static/js/main.f471d2b9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17654e45.css",
+    "static/js/main.f471d2b9.js"
+  ]
+}
