@@ -1,5 +1,6 @@
 import * as ImageService from 'service/image-service';
 import { Button, SearchForm, Grid, GridItem, Text, CardItem } from 'components';
+import Modal from 'service/Modal/Modal';
 
 import React, { useState, useEffect, useCallback } from 'react';
 
@@ -8,6 +9,8 @@ export const Gallery = () => {
   const [page, setPage] = useState(1);
   const [photo, setPhoto] = useState([]);
   const [showBtn, setShowBtn] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [dataModal, setDataModal] = useState(null);
 
   const getNormalizedPhotos = arr => {
     return arr.map(({ id, alt, src, avg_color }) => ({
@@ -47,6 +50,11 @@ export const Gallery = () => {
     setPage(prev => prev + 1);
   };
 
+  const openModal = (src, alt) => {
+    setShowModal(true);
+    setDataModal({ src, alt });
+  };
+
   return (
     <>
       <SearchForm onSubmit={onSubmit}></SearchForm>
@@ -55,13 +63,24 @@ export const Gallery = () => {
           {photo.map(({ id, alt, src, avg_color }) => (
             <GridItem key={id}>
               <CardItem color={avg_color}>
-                <img src={src.small} alt={alt} />
+                <img
+                  src={src.small}
+                  alt={alt}
+                  onClick={() => openModal(src, alt)}
+                />
               </CardItem>
             </GridItem>
           ))}
         </Grid>
       )}
       {showBtn && <Button onClick={handlerClick}>Load more</Button>}
+      {showModal && (
+        <Modal
+          alt={dataModal.alt}
+          src={dataModal.src}
+          closeModal={() => setShowModal(false)}
+        />
+      )}
     </>
   );
 };
