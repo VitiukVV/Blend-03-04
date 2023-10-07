@@ -18,7 +18,7 @@ export const Home = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [getCountries]);
+  }, []);
 
   useEffect(() => {
     fetchCountries();
@@ -27,7 +27,7 @@ export const Home = () => {
   return (
     <Section>
       <Container>
-        <CountryList />
+        {arrCountries.length > 0 && <CountryList countries={arrCountries} />}
         {isLoading && <Loader />}
         {isError && <Heading>Not found</Heading>}
       </Container>
