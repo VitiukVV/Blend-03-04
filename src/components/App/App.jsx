@@ -1,5 +1,3 @@
-import { nanoid } from "nanoid";
-
 import {
   Container,
   Grid,
@@ -27,33 +25,12 @@ export const App = () => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("todos", JSON.stringify(todos));
-  // }, [todos]);
-
-  // const addTodo = (text) => {
-  //   const todo = {
-  //     id: nanoid(),
-  //     text,
-  //   };
-
-  //   setTodos((todos) => [...todos, todo]);
-  // };
-
-  // const handleSubmit = (data) => {
-  //   addTodo(data);
-  // };
-
-  // const deleteTodo = (id) => {
-  //   setTodos((prev) => prev.filter((todo) => todo.id !== id));
-  // };
-
   return (
     <>
       <Header />
       <Section>
         <Container>
-          {/* <SearchForm onSubmit={handleSubmit} /> */}
+          <SearchForm />
 
           {todos.length === 0 && (
             <Text textAlign="center">There are no any todos ... </Text>
