@@ -8,7 +8,7 @@ import {
   Text,
   Todo,
 } from "components";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTodos } from "redux/selector";
 import { addTodos } from "redux/todoSlice";
@@ -23,7 +23,7 @@ export const App = () => {
     if (todos) {
       dispatch(addTodos(todos));
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
