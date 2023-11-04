@@ -5,14 +5,18 @@ import { Grid } from "../Grid/Grid";
 // import { comments } from '../../helpers/comments';
 import { useGetCommentsQuery } from "../../redux/commentApi";
 export const Comments = () => {
-  const { data: comments, isLoading } = useGetCommentsQuery();
+  const { data: comments, isLoading } =
+    useGetCommentsQuery();
   return (
     <>
       {isLoading && <p>Loading...</p>}
-      <Grid>
-        {comments &&
-          comments.map((comment) => <Comment key={comment.id} {...comment} />)}
-      </Grid>
+      {comments && (
+        <Grid>
+          {comments.map((comment) => (
+            <Comment key={comment.id} {...comment} />
+          ))}
+        </Grid>
+      )}
     </>
   );
 };
